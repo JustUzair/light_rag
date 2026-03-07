@@ -23,7 +23,7 @@
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
     "@langchain/classic": "^1.0.1",
-    "@langchain/core": "^1.1.27",
+    "@langchain/core": "^1.1.31",
     "@langchain/deepseek": "^1.0.13",
     "@langchain/google-genai": "^1.0.3",
     "@langchain/groq": "^1.1.2",
