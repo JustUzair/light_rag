@@ -9,3 +9,5 @@ export type Candidate = {
   sources: string[];
   mode: AgentMode;
 };
+
+export type EmbeddingsProvider = "openai" | "google";
