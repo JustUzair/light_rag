@@ -168,12 +168,12 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@langchain/classic@^1.0.1":
-  version "1.0.21"
-  resolved "https://registry.yarnpkg.com/@langchain/classic/-/classic-1.0.21.tgz#54509da49ce6429adcc19b8d7b4a5e478214ecba"
-  integrity sha512-2ZHcBx/abTKL/3f7RIMuqjG86Ph81g4elkB27rI1HFtyMGEfcyTLTIn5/Jx5W//jj30r8qRc4vh7zUtChRByIQ==
+"@langchain/classic@^1.0.22":
+  version "1.0.22"
+  resolved "https://registry.yarnpkg.com/@langchain/classic/-/classic-1.0.22.tgz#fa79102549d152c88090f46633db9636874a75cc"
+  integrity sha512-XJd5nbxM6UXYkDJc98Zo/9NkPFWy3g/XunBe8hnTOyaazxvA+5+gdJyDKVrcRfaGJskql0V5h/3XQ2f9WFzEuw==
   dependencies:
-    "@langchain/openai" "1.2.11"
+    "@langchain/openai" "1.2.12"
     "@langchain/textsplitters" "1.0.1"
     handlebars "^4.7.8"
     js-yaml "^4.1.1"
@@ -236,6 +236,15 @@
   version "1.2.11"
   resolved "https://registry.yarnpkg.com/@langchain/openai/-/openai-1.2.11.tgz#5b8309d1ecf98b988184534c3dbe5d8e3868e232"
   integrity sha512-//a3OcvHKuz9QXAn3QJjASdtSyyF1JmsZKVzuUa2uR2YLFAS+XMZYLfel9RaNdt8LWkwhSpCiVvegqUGRBU+uw==
+  dependencies:
+    js-tiktoken "^1.0.12"
+    openai "^6.24.0"
+    zod "^3.25.76 || ^4"
+
+"@langchain/openai@1.2.12":
+  version "1.2.12"
+  resolved "https://registry.yarnpkg.com/@langchain/openai/-/openai-1.2.12.tgz#6147acbc3e92c363e99b7ba3e812bb055aea1d51"
+  integrity sha512-Im6PPNujrfkZk4vpc9JAjbeERg+RbNtWRe3KSFOP7aNGa/yZ+XD69lxXwbsZGaZkbiUN/hwe9RYeisUfThb5wg==
   dependencies:
     js-tiktoken "^1.0.12"
     openai "^6.24.0"
