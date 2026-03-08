@@ -7,7 +7,6 @@ import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import Footer from "@/components/ui/footer";
 import { ChatTurn } from "@/lib/types";
-import Header from "@/components/ui/header";
 
 import { CHAT_STORAGE_KEY, font, SUGGESTIONS, V } from "@/lib/data";
 import { getDynamicQuery } from "@/lib/utils";
@@ -17,6 +16,7 @@ import ClearHistoryButton from "@/components/ui/CleanHistoryButton";
 import Background from "@/components/ui/background";
 import ChatSynthesizing from "@/components/ui/ChatSynthesizing";
 import TiltCard from "@/components/ui/TiltCard";
+import Header from "@/components/ui/header";
 
 export default function SearchPage() {
   const [query, setQuery] = useState("");

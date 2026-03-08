@@ -1,12 +1,11 @@
 "use client";
 import { useState, useCallback } from "react";
-import Header from "@/components/ui/header";
 import Background from "@/components/ui/background";
 import ModuleCards from "@/components/ui/ModuleCards";
-import { Syne } from "next/font/google";
 
 import dynamic from "next/dynamic";
 import { font } from "@/lib/data";
+import Header from "@/components/ui/header";
 const Hero = dynamic(() => import("@/components/ui/Hero"), {
   ssr: false,
 });
