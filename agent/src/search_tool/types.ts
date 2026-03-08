@@ -11,3 +11,7 @@ export type Candidate = {
 };
 
 export type EmbeddingsProvider = "openai" | "google";
+export type IngestTextInput = {
+  text: string;
+  source?: string;
+};
