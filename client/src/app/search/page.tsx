@@ -264,7 +264,7 @@ export default function SearchPage() {
                       className="w-1.5 h-1.5 rounded-full bg-violet-600"
                       style={{ boxShadow: "0 0 6px rgba(124,58,237,0.65)" }}
                     />
-                    <span className="text-[8px] uppercase tracking-[0.4em] text-slate-700 font-bold">
+                    <span className="lg:text-base md:text-base text-sm uppercase tracking-[0.4em] text-slate-700 font-bold">
                       {chat.filter(t => t.role === "user").length} quer
                       {chat.filter(t => t.role === "user").length !== 1
                         ? "ies"
