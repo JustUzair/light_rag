@@ -6,11 +6,11 @@ import ModuleCards from "@/components/ui/ModuleCards";
 import { Syne } from "next/font/google";
 
 import dynamic from "next/dynamic";
+import { font } from "@/lib/data";
 const Hero = dynamic(() => import("@/components/ui/Hero"), {
   ssr: false,
 });
 
-const syne = Syne({ subsets: ["latin"], weight: ["700", "800"] });
 export default function LandingPage() {
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
   const [heroReady, setHeroReady] = useState(false);
@@ -28,11 +28,11 @@ export default function LandingPage() {
       }}
     >
       <Background mouse={mouse} />
-      <Header font={syne} />
+      <Header font={font} />
       {/* ══ HERO — Spline and Typographies ══ */}
-      <Hero font={syne} onLoad={() => setHeroReady(true)} />
+      <Hero font={font} onLoad={() => setHeroReady(true)} />
       {/* ══ LCEL + RAG Module Cards ══ */}
-      {heroReady && <ModuleCards font={syne} />}
+      {heroReady && <ModuleCards font={font} />}
     </div>
   );
 }
