@@ -8,7 +8,8 @@
     "dev": "npx tsc --noEmit && tsx watch src/index.ts",
     "build": "tsup src/index.ts --format esm --clean --minify",
     "vercel-build": "yarn build",
-    "start": "npm run build && node dist/index.js"
+    "start": "npm run build && node dist/index.js",
+    "test": "vitest"
   },
   "keywords": [],
   "author": "",
@@ -17,8 +18,11 @@
     "@types/cors": "^2.8.19",
     "@types/html-to-text": "^9.0.4",
     "@types/node": "^24.9.1",
+    "@types/supertest": "^7.2.0",
+    "supertest": "^7.2.2",
     "tsx": "^4.20.6",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
