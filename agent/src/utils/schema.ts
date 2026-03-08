@@ -40,3 +40,17 @@ export const SearchAnswerSchema = z.object({
 });
 
 export type SearchAnswer = z.infer<typeof SearchAnswerSchema>;
+
+export const IngestBodySchema = z.object({
+  text: z.string().min(1, "Please provide some text to ingest"),
+  source: z.string().optional(),
+});
+
+export type IngestBody = z.infer<typeof IngestBodySchema>;
+
+export const AskBodySchema = z.object({
+  query: z.string().min(1, "Please provide a query"),
+  k: z.number().min(1).max(10).optional(),
+});
+
+export type AskBody = z.infer<typeof AskBodySchema>;

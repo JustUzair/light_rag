@@ -1,6 +1,7 @@
 import { rateLimit } from "express-rate-limit";
 import express, { Request, Response } from "express";
 import LCELRouter from "./routes/search_lcel.js";
+import RAG_KB_Router from "./routes/light_rag_kb.js";
 import cors from "cors";
 import path from "path";
 
@@ -59,6 +60,7 @@ app.use(
 );
 
 app.use("/api/v1/search", LCELRouter);
+app.use("/api/v1/kb", RAG_KB_Router);
 
 // Handling the unhandled routes
 app.all("*", (req, res, next) => {
