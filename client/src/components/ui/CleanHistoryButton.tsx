@@ -31,7 +31,7 @@ export default function ClearHistoryButton({
       onClick={handleClick}
       whileHover={{ scale: 1.04 }}
       whileTap={{ scale: 0.96 }}
-      className={`group relative flex items-center gap-2 px-3 py-1.5 text-[9px] font-bold uppercase tracking-[0.35em] transition-all duration-200
+      className={`group relative flex items-center gap-2 px-3 py-1.5 lg:text-base md:text-base text-sm font-bold uppercase tracking-[0.35em] transition-all duration-200
         ${
           confirm
             ? "border border-violet-400/40 bg-violet-300/10 text-violet-200"
