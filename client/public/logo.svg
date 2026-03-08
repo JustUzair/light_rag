@@ -1,0 +1,32 @@
+<svg width="220" height="220" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+
+<defs>
+<linearGradient id="sgrad" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#7B5CFF"/>
+<stop offset="100%" stop-color="#00E1FF"/>
+</linearGradient>
+</defs>
+
+<!-- spiral paths -->
+<path d="M110 20
+C170 20 200 80 160 120
+C130 150 90 150 70 130
+C40 100 60 70 90 70
+C110 70 120 90 110 110"
+stroke="url(#sgrad)"
+stroke-width="3"
+fill="none"/>
+
+<path d="M110 200
+C50 200 20 140 60 100
+C90 70 130 70 150 90
+C180 120 160 150 130 150
+C110 150 100 130 110 110"
+stroke="#7B5CFF"
+stroke-width="3"
+fill="none"/>
+
+<!-- core -->
+<circle cx="110" cy="110" r="8" fill="white"/>
+
+</svg>
