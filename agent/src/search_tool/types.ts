@@ -15,3 +15,14 @@ export type IngestTextInput = {
   text: string;
   source?: string;
 };
+
+export type KBSource = {
+  source: string;
+  chunkId: number;
+};
+
+export type KBAskResult = {
+  answer: string;
+  sources: KBSource[];
+  confidence: number;
+};
