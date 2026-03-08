@@ -49,6 +49,7 @@ const Hero = ({ font, onLoad }: { font: any; onLoad?: () => void }) => {
           <span className="text-[7px] sm:text-[8px] uppercase tracking-[0.5em] text-violet-500/55 font-bold">
             <ScrambleOnMount
               text="v2.0 · Intelligence Synthesis Engine"
+              className="lg:text-lg md:text-xl text-sm"
               delay={500}
             />
           </span>
@@ -56,9 +57,8 @@ const Hero = ({ font, onLoad }: { font: any; onLoad?: () => void }) => {
 
         {/* AXIOM wordmark */}
         <div
-          className={`${font.className} flex items-end leading-none mb-4 sm:mb-5`}
+          className={`${font.className} flex items-end leading-none mb-4 sm:mb-5 lg:text-[16rem] md:text-[8rem] text-[3.5rem]`}
           style={{
-            fontSize: "clamp(48px, 11vw, 124px)",
             fontWeight: 800,
             letterSpacing: "-0.04em",
           }}
@@ -119,7 +119,7 @@ const Hero = ({ font, onLoad }: { font: any; onLoad?: () => void }) => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1.05 + i * 0.06 }}
-              className="flex items-center gap-1.5 px-2 sm:px-2.5 py-1 text-[7px] sm:text-[8px] font-bold uppercase tracking-[0.25em] text-violet-500/45"
+              className="flex items-center gap-1.5 px-2 sm:px-2.5 py-1 lg:text-[15px] md:text-base text-xs  font-bold uppercase tracking-[0.25em] text-violet-500/45"
               style={{
                 border: "1px solid rgba(124,58,237,0.1)",
                 background: "rgba(124,58,237,0.035)",

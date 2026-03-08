@@ -35,7 +35,7 @@ export const MODULES = [
     href: "/kb",
     module: "02",
     title: "Knowledge Base",
-    desc: "Ingest private documents. Query your corpus via LightRAG embeddings. No web — pure distilled signal.",
+    desc: "Ingest private documents. Query your corpus via LightRAG embeddings. No web, pure distilled signal.",
     icon: <Database size={20} />,
     accent: { r: 6, g: 182, b: 212 }, // cyan
     labelTag: "RETRIEVAL",

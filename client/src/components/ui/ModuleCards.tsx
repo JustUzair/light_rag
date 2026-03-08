@@ -51,7 +51,7 @@ const ModuleCards = ({ font }: { font: any }) => {
         className="flex items-center gap-4 mb-10 overflow-hidden"
       >
         <div className="h-px flex-1 bg-linear-to-r from-violet-500/40 to-transparent" />
-        <span className="text-[8px] uppercase tracking-[0.7em] text-violet-500/50 font-black whitespace-nowrap">
+        <span className="lg:text-xl md:text-xl text-xs uppercase tracking-[0.7em] text-violet-500/50 font-black whitespace-nowrap">
           System.Select_Module
         </span>
         <div className="h-px flex-1 bg-linear-to-l from-violet-500/40 to-transparent" />
@@ -76,7 +76,7 @@ const ModuleCards = ({ font }: { font: any }) => {
             >
               <Link
                 href={mod.href}
-                className="group relative flex flex-col bg-[#03020a] hover:bg-black/20 transition-colors duration-700 overflow-hidden min-h-[240px]"
+                className="group relative flex flex-col bg-[#03020a] hover:bg-black/20 transition-colors duration-700 overflow-hidden min-h-60"
               >
                 {/* ── Hover Glow ── */}
                 <motion.div
@@ -94,7 +94,7 @@ const ModuleCards = ({ font }: { font: any }) => {
                 <div className="relative flex flex-col h-full p-8 sm:p-10 z-10">
                   <div className="flex items-start justify-between mb-auto">
                     <div
-                      className="flex items-center justify-center w-11 h-11 border border-white/5 bg-white/[0.01] transition-all duration-500"
+                      className="flex items-center justify-center w-11 h-11 border border-white/5 bg-white/1 transition-all duration-500"
                       style={{
                         color: isHovered
                           ? rgba(mod.accent, 1)
@@ -114,15 +114,15 @@ const ModuleCards = ({ font }: { font: any }) => {
                   </div>
 
                   <div className="mt-8">
-                    <span className="block text-[7px] uppercase tracking-[0.5em] font-bold mb-3 opacity-20 group-hover:opacity-50 transition-opacity">
+                    <span className="block lg:text-[14px] md:text-[14px] text-xs uppercase tracking-[0.5em] font-bold mb-3 opacity-20 group-hover:opacity-50 transition-opacity">
                       // MOD_{mod.module} // {mod.labelTag}
                     </span>
                     <h2
-                      className={`${font.className} text-2xl sm:text-4xl font-bold text-white mb-4 tracking-tighter`}
+                      className={`${font.className} lg:text-6xl md:text-2xl text-4xl font-bold text-white mb-4 tracking-tighter`}
                     >
                       {mod.title}
                     </h2>
-                    <p className="text-[10px] uppercase tracking-[0.15em] text-slate-600 leading-relaxed max-w-[260px] group-hover:text-slate-400 transition-colors">
+                    <p className="lg:text-[12px] md:text-[12px] text-xs uppercase tracking-[0.15em] text-slate-600 leading-relaxed max-w-65 group-hover:text-slate-400 transition-colors">
                       {mod.desc}
                     </p>
                   </div>
@@ -138,7 +138,7 @@ const ModuleCards = ({ font }: { font: any }) => {
                 <motion.div
                   animate={{ scaleX: isHovered ? 1 : 0 }}
                   transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                  className="absolute bottom-0 left-0 right-0 h-[1px] origin-left"
+                  className="absolute bottom-0 left-0 right-0 h-px origin-left"
                   style={{
                     background: `linear-gradient(to right, ${rgba(mod.accent, 0.8)}, transparent)`,
                   }}

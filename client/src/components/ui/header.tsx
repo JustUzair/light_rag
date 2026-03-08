@@ -11,17 +11,17 @@ const NAV = [
     href: "/search",
     label: "Search",
     short: "SRC",
-    icon: <Search size={12} />,
+    icon: <Search size={18} />,
   },
   {
     href: "/kb",
     label: "Knowledge",
     short: "KB",
-    icon: <Database size={12} />,
+    icon: <Database size={18} />,
   },
 ];
 
-const Header = ({ font }: { font: any }) => {
+export default function Header({ font }: { font: any }) {
   const pathname = usePathname();
 
   return (
@@ -29,32 +29,32 @@ const Header = ({ font }: { font: any }) => {
       initial={{ y: -64, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-      className="sticky top-0 z-50 flex items-center justify-between px-4 sm:px-8 h-14 bg-[#03020a]/88 backdrop-blur-2xl"
+      className="sticky top-0 z-50 flex items-center justify-between px-4 sm:px-8 h-20 bg-[#03020a]/88 backdrop-blur-2xl"
       style={{ borderBottom: "1px solid rgba(124,58,237,0.08)" }}
     >
       {/* ── Brand ── */}
-      <Link href="/" className="group flex items-center gap-2.5 sm:gap-3">
+      <Link href="/" className="group flex items-center lg:gap-2.5 gap-3">
         <motion.div
           whileHover={{ rotate: 90, scale: 1.06 }}
           transition={{ duration: 0.32, ease: "easeInOut" }}
-          className="flex h-8 w-8 items-center justify-center shrink-0"
+          className="flex h-12 w-12 items-center justify-center shrink-0"
         >
-          <Image src={"/logo.svg"} alt="Logo" width={100} height={100} />
+          <Image src={"/logo.svg"} alt="AXIOM" width={100} height={100} />
         </motion.div>
         <div className="hidden sm:block">
           <div
-            className={`${font.className} text-[17px] font-bold text-white leading-none tracking-tight`}
+            className={`${font.className} lg:text-2xl md:text-xl text-sm font-bold text-white leading-none tracking-tight`}
             style={{ textShadow: "0 0 32px rgba(167,139,250,0.15)" }}
           >
             AXIOM
           </div>
-          <div className="text-[7px] uppercase tracking-[0.42em] text-violet-500/55 font-bold mt-0.5">
+          <div className="text-xs uppercase tracking-[0.42em] text-violet-500/55 font-bold mt-0.5">
             Synthesis Engine
           </div>
         </div>
         {/* Mobile: just wordmark */}
         <span
-          className={`${font.className} sm:hidden text-[15px] font-bold text-white tracking-tight`}
+          className={`${font.className} sm:hidden text-2xl font-bold text-white tracking-tight`}
         >
           AXIOM
         </span>
@@ -68,7 +68,7 @@ const Header = ({ font }: { font: any }) => {
             <Link
               key={item.href}
               href={item.href}
-              className="relative flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 text-[8px] sm:text-[9px] font-bold uppercase tracking-[0.28em] sm:tracking-[0.32em] transition-colors duration-200"
+              className="relative flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 lg:text-base md:text-xl  text-xs font-bold uppercase tracking-[0.28em] sm:tracking-[0.32em] transition-colors duration-200"
               style={{
                 border: isActive
                   ? "1px solid rgba(124,58,237,0.2)"
@@ -120,12 +120,10 @@ const Header = ({ font }: { font: any }) => {
           className="w-1.5 h-1.5 rounded-full bg-emerald-400"
           style={{ boxShadow: "0 0 8px rgba(52,211,153,0.9)" }}
         />
-        <span className="text-[8px] sm:text-[9px] text-emerald-500/60 font-bold tracking-[0.3em] uppercase hidden md:block">
+        <span className="lg:text-xl md:text-base text-sm text-emerald-500/60 font-bold tracking-[0.3em] uppercase hidden md:block">
           Online
         </span>
       </div>
     </motion.header>
   );
-};
-
-export default Header;
+}
