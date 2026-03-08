@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Omnis",
-  description: "Omnis is a LCEL RAG Search tool built in Langchain",
+  title: "AXIOM",
+  description: "AXIOM is a LCEL + RAG Search tool built in Langchain",
 };
 
 export default function RootLayout({
