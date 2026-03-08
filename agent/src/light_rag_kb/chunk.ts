@@ -4,7 +4,7 @@ export const CHUNK_WINDOW = 200; // overlap of 200 chars for context
 
 export function chunk(text: string, source: string): Array<Document> {
   const clean = (text ?? "").replace(/\r\n/g, "\n");
-
+  //   console.debug(`Clean: ${clean}`);
   const docs: Document[] = [];
   if (!clean.trim()) return docs;
 
@@ -25,6 +25,7 @@ export function chunk(text: string, source: string): Array<Document> {
           chunkId,
         },
       });
+      docs.push(doc);
     }
     chunkId += 1;
     start += step;
