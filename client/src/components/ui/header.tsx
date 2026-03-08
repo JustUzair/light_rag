@@ -1,50 +1,127 @@
-import { motion } from "framer-motion";
-import { Layers } from "lucide-react";
-import React from "react";
+"use client";
 
-const Header = () => {
+import { motion, AnimatePresence } from "framer-motion";
+import { Search, Database } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import Image from "next/image";
+
+const NAV = [
+  {
+    href: "/search",
+    label: "Search",
+    short: "SRC",
+    icon: <Search size={12} />,
+  },
+  {
+    href: "/kb",
+    label: "Knowledge",
+    short: "KB",
+    icon: <Database size={12} />,
+  },
+];
+
+const Header = ({ font }: { font: any }) => {
+  const pathname = usePathname();
+
   return (
     <motion.header
-      initial={{ y: -70, opacity: 0 }}
+      initial={{ y: -64, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-      className="sticky top-0 z-50 flex items-center justify-between px-8 py-5 bg-[#040404]/80 backdrop-blur-2xl"
-      style={{ borderBottom: "1px solid rgba(255,255,255,0.04)" }}
+      className="sticky top-0 z-50 flex items-center justify-between px-4 sm:px-8 h-14 bg-[#03020a]/88 backdrop-blur-2xl"
+      style={{ borderBottom: "1px solid rgba(124,58,237,0.08)" }}
     >
-      <div className="flex items-center gap-4">
+      {/* ── Brand ── */}
+      <Link href="/" className="group flex items-center gap-2.5 sm:gap-3">
         <motion.div
-          whileHover={{ rotate: 90, scale: 1.05 }}
-          transition={{ duration: 0.35, ease: "easeInOut" }}
-          className="flex h-9 w-9 items-center justify-center bg-orange-600 rounded-sm"
-          style={{
-            boxShadow:
-              "0 0 24px rgba(234,88,12,0.45), 0 0 80px rgba(234,88,12,0.1)",
-          }}
+          whileHover={{ rotate: 90, scale: 1.06 }}
+          transition={{ duration: 0.32, ease: "easeInOut" }}
+          className="flex h-8 w-8 items-center justify-center shrink-0"
         >
-          <Layers size={17} className="text-black" />
+          <Image src={"/logo.svg"} alt="Logo" width={100} height={100} />
         </motion.div>
-        <div className="">
+        <div className="hidden sm:block">
           <div
-            className="text-xl font-black tracking-[-0.06em] text-white leading-none"
-            style={{ textShadow: "0 0 40px rgba(251,146,60,0.18)" }}
+            className={`${font.className} text-[17px] font-bold text-white leading-none tracking-tight`}
+            style={{ textShadow: "0 0 32px rgba(167,139,250,0.15)" }}
           >
-            OMNIS
+            AXIOM
           </div>
-          <div className="text-[8px] uppercase tracking-[0.45em] text-orange-500/80 font-bold mt-0.5">
-            Search Agent
+          <div className="text-[7px] uppercase tracking-[0.42em] text-violet-500/55 font-bold mt-0.5">
+            Synthesis Engine
           </div>
         </div>
-      </div>
+        {/* Mobile: just wordmark */}
+        <span
+          className={`${font.className} sm:hidden text-[15px] font-bold text-white tracking-tight`}
+        >
+          AXIOM
+        </span>
+      </Link>
 
-      <div className="flex items-center gap-3">
+      {/* ── Nav ── */}
+      <nav className="flex items-center gap-0.5 sm:gap-1">
+        {NAV.map(item => {
+          const isActive = pathname?.startsWith(item.href);
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="relative flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 text-[8px] sm:text-[9px] font-bold uppercase tracking-[0.28em] sm:tracking-[0.32em] transition-colors duration-200"
+              style={{
+                border: isActive
+                  ? "1px solid rgba(124,58,237,0.2)"
+                  : "1px solid transparent",
+                background: isActive ? "rgba(124,58,237,0.08)" : "transparent",
+                color: isActive
+                  ? "rgba(192,173,255,0.9)"
+                  : "rgba(100,95,115,0.85)",
+              }}
+              onMouseEnter={e =>
+                !isActive &&
+                (e.currentTarget.style.color = "rgba(192,173,255,0.65)")
+              }
+              onMouseLeave={e =>
+                !isActive &&
+                (e.currentTarget.style.color = "rgba(100,95,115,0.85)")
+              }
+            >
+              <span className={isActive ? "text-violet-400" : "text-slate-700"}>
+                {item.icon}
+              </span>
+              {/* Desktop label */}
+              <span className="hidden sm:inline">{item.label}</span>
+              {/* Mobile label */}
+              <span className="inline sm:hidden">{item.short}</span>
+
+              {/* Active underline */}
+              {isActive && (
+                <motion.div
+                  layoutId="header-active-bar"
+                  className="absolute bottom-0 left-0 right-0 h-px"
+                  style={{
+                    background:
+                      "linear-gradient(to right, rgba(124,58,237,0.7), rgba(124,58,237,0.1))",
+                  }}
+                  transition={{ type: "spring", stiffness: 380, damping: 38 }}
+                />
+              )}
+            </Link>
+          );
+        })}
+      </nav>
+
+      {/* ── Status indicator ── */}
+      <div className="flex items-center gap-2">
         <motion.div
-          animate={{ scale: [1, 1.4, 1], opacity: [1, 0.6, 1] }}
-          transition={{ duration: 2.4, repeat: Infinity }}
-          className="w-1.5 h-1.5 rounded-full bg-emerald-500"
-          style={{ boxShadow: "0 0 8px rgba(16,185,129,0.9)" }}
+          animate={{ scale: [1, 1.45, 1], opacity: [0.85, 0.4, 0.85] }}
+          transition={{ duration: 2.3, repeat: Infinity }}
+          className="w-1.5 h-1.5 rounded-full bg-emerald-400"
+          style={{ boxShadow: "0 0 8px rgba(52,211,153,0.9)" }}
         />
-        <span className="text-[10px] text-emerald-500/80 font-bold tracking-[0.3em] uppercase hidden md:block">
-          Operational
+        <span className="text-[8px] sm:text-[9px] text-emerald-500/60 font-bold tracking-[0.3em] uppercase hidden md:block">
+          Online
         </span>
       </div>
     </motion.header>
