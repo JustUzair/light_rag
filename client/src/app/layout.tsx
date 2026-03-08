@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "AXIOM | Intelligence Synthesis Engine", // This fixes the specific error in your screenshot
     description:
-      "Multi-mode RAG and Web Synthesis tool for deep intelligence gathering.",
+      "A high-performance intelligence synthesis engine powered by LangChain LCEL and LightRAG. Synthesize live web data with Tavily or ingest and query private knowledge bases with zero-noise retrieval.",
     url: new URL(process.env.NEXT_PUBLIC_BASE_URL as string),
     siteName: "AXIOM",
     images: [
