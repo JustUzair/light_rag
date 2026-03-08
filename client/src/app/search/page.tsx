@@ -88,7 +88,7 @@ export default function SearchPage() {
           scrollbarColor: "#7c3aed transparent",
         }}
       >
-        <div className="mx-auto max-w-4xl px-5 sm:px-8 py-10">
+        <div className="mx-auto lg:max-w-[80%] max-w-[90%] px-5 lg:px-8 py-10">
           <AnimatePresence mode="wait">
             {/* ── EMPTY STATE — quick queries ── */}
             {chat.length === 0 ? (
@@ -112,7 +112,7 @@ export default function SearchPage() {
                       className="w-1 h-4 bg-violet-600"
                       style={{ boxShadow: "0 0 10px rgba(124,58,237,0.75)" }}
                     />
-                    <span className="text-[8px] uppercase tracking-[0.5em] text-violet-700 font-bold">
+                    <span className="lg:text-lg md:text-xl text-sm uppercase tracking-[0.5em] text-violet-700 font-bold">
                       Web Intelligence
                     </span>
                   </motion.div>
@@ -121,7 +121,7 @@ export default function SearchPage() {
                     initial={{ opacity: 0, y: 14 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.25, duration: 0.55 }}
-                    className={`${font.className} text-3xl sm:text-4xl font-bold text-white mb-2 leading-none`}
+                    className={`${font.className} lg:text-6xl md:text-2xl text-4xl font-bold text-white mb-2 leading-none`}
                   >
                     Search
                   </motion.h1>
@@ -130,7 +130,7 @@ export default function SearchPage() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.45 }}
-                    className="text-[9px] uppercase tracking-[0.4em] text-slate-700 font-bold"
+                    className="lg:text-[12px] md:text-[12px] text-xs uppercase tracking-[0.4em] text-slate-700 font-bold"
                   >
                     Real-time web synthesis · select or type a query
                   </motion.p>
@@ -160,7 +160,7 @@ export default function SearchPage() {
                     duration: 0.85,
                     ease: [0.16, 1, 0.3, 1],
                   }}
-                  className="grid grid-cols-2 md:grid-cols-3 gap-px"
+                  className="grid grid-cols-2 lg:grid-cols-3 md:grid-cols-3 gap-px"
                   style={{
                     background: "rgba(124,58,237,0.06)",
                     border: `1px solid ${V.border}`,
@@ -200,10 +200,10 @@ export default function SearchPage() {
                         {item.icon}
                       </motion.div>
 
-                      <span className="block text-[7px] uppercase tracking-[0.45em] text-slate-800 group-hover:text-violet-700/55 transition-colors mb-1.5 font-bold">
+                      <span className="block md:text-xl lg:text-2xl text-sm uppercase tracking-[0.45em] text-slate-800 group-hover:text-violet-700/55 transition-colors mb-1.5 font-bold">
                         {item.category}
                       </span>
-                      <span className="text-xs sm:text-sm font-bold text-slate-600 group-hover:text-white transition-colors duration-200 leading-snug">
+                      <span className="lg:text-xl md:text-base text-sm font-bold text-slate-600 group-hover:text-white transition-colors duration-200 leading-snug">
                         {item.label}
                       </span>
 
@@ -231,11 +231,11 @@ export default function SearchPage() {
                         className="w-1.25 h-3 bg-violet-600"
                         style={{ boxShadow: "0 0 10px rgba(124,58,237,0.75)" }}
                       />
-                      <span className="text-[7px] text-slate-800 uppercase tracking-[0.4em] font-bold">
+                      <span className="md:text-xl lg:text-2xl text-sm  text-slate-800 uppercase tracking-[0.4em] font-bold">
                         Ready
                       </span>
                     </div>
-                    <span className="text-[10px] text-slate-900 italic">
+                    <span className="lg:text-xl md:text-base text-sm wrap-break-word text-slate-900 italic">
                       Enter query to begin synthesis...
                     </span>
                   </motion.div>
@@ -284,11 +284,11 @@ export default function SearchPage() {
                   >
                     {turn.role === "user" ? (
                       <div className="flex flex-col gap-3">
-                        <span className="text-[7px] uppercase tracking-[0.45em] text-slate-700 font-bold">
+                        <span className="lg:text-xl md:text-base text-sm  uppercase tracking-[0.45em] text-slate-700 font-bold">
                           Query
                         </span>
                         <div
-                          className="text-xl sm:text-2xl md:text-3xl font-black tracking-tight leading-tight text-slate-500 pl-5"
+                          className="text-2xl sm:text-2xl md:text-3xl font-black tracking-tight leading-tight text-slate-500 pl-5"
                           style={{ borderLeft: `2px solid ${V.border}` }}
                         >
                           {turn.content}
@@ -299,14 +299,14 @@ export default function SearchPage() {
                         {/* Response header */}
                         <div className="flex items-center gap-3 flex-wrap">
                           <span
-                            className={`${font.className} text-[9px] uppercase tracking-[0.38em] text-white font-bold bg-violet-600 px-3 py-1`}
+                            className={`${font.className} md:text-base lg:text-base text-xs uppercase tracking-[0.38em] text-white font-bold bg-violet-600 px-3 py-1`}
                             style={{ boxShadow: V.glow }}
                           >
                             Synthesis
                           </span>
                           {turn.mode && (
                             <span
-                              className="text-[8px] uppercase tracking-[0.35em] text-violet-500/45 px-2 py-1 font-bold"
+                              className="md:text-base lg:text-base text-xs uppercase tracking-[0.35em] text-violet-500/45 px-2 py-1 font-bold"
                               style={{
                                 border: `1px solid rgba(124,58,237,0.18)`,
                               }}
@@ -315,7 +315,7 @@ export default function SearchPage() {
                             </span>
                           )}
                           {turn.time !== undefined && turn.time > 0 && (
-                            <span className="text-[9px] text-slate-700 ml-auto tabular-nums">
+                            <span className="md:text-base lg:text-base text-sm text-slate-700 ml-auto tabular-nums">
                               {turn.time}ms
                             </span>
                           )}
@@ -326,14 +326,14 @@ export default function SearchPage() {
                           <ErrorBlock content={turn.content} />
                         ) : idx === chat.length - 1 ? (
                           <div
-                            className="text-base sm:text-lg md:text-xl whitespace-pre-wrap leading-[1.88] text-slate-200 font-medium pl-5 py-1"
+                            className="lg:text-[20px] text-xl md:text-xl whitespace-pre-wrap leading-[1.88] text-slate-200 font-medium pl-5 py-1"
                             style={{ borderLeft: `1px solid ${V.responseBar}` }}
                           >
                             <RevealWords text={turn.content} />
                           </div>
                         ) : (
                           <div
-                            className="text-base sm:text-lg md:text-xl whitespace-pre-wrap leading-[1.88] text-slate-200 font-medium pl-5 py-1"
+                            className="lg:text-[20px] text-xl md:text-xl whitespace-pre-wrap leading-[1.88] text-slate-200 font-medium pl-5 py-1"
                             style={{ borderLeft: `1px solid ${V.responseBar}` }}
                           >
                             {turn.content}

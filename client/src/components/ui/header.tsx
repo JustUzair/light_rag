@@ -120,7 +120,7 @@ export default function Header({ font }: { font: any }) {
           className="w-1.5 h-1.5 rounded-full bg-emerald-400"
           style={{ boxShadow: "0 0 8px rgba(52,211,153,0.9)" }}
         />
-        <span className="lg:text-xl md:text-base text-sm text-emerald-500/60 font-bold tracking-[0.3em] uppercase hidden md:block">
+        <span className="lg:text-xl md:text-base text-sm text-emerald-500/60 font-bold tracking-[0.3em] hidden md:block">
           Online
         </span>
       </div>

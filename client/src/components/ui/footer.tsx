@@ -131,7 +131,7 @@ const Footer = ({
       className="relative z-30 bg-[#03020a]/92 backdrop-blur-2xl px-4 sm:px-6 pt-4 pb-4"
       style={{ borderTop: "1px solid rgba(124,58,237,0.07)" }}
     >
-      <form onSubmit={handleSubmit} className="mx-auto max-w-4xl">
+      <form onSubmit={handleSubmit} className="mx-auto max-w-6xl">
         {/* ── Input shell ── */}
         <div className="group relative">
           {/* Focus glow border */}
@@ -289,7 +289,7 @@ const Footer = ({
         </div>
 
         {/* Metadata row */}
-        <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1.5 text-[7px] sm:text-[8px] font-bold tracking-[0.22em] sm:tracking-[0.3em] uppercase text-slate-900 px-0.5">
+        <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1.5 lg:text-[12px] md:text-[12px] text-xs  font-bold tracking-[0.22em] sm:tracking-[0.3em] uppercase text-slate-900 px-0.5">
           <span className="tabular-nums whitespace-nowrap">
             LAT: {chat[chat.length - 1]?.time ?? "—"}ms
           </span>
